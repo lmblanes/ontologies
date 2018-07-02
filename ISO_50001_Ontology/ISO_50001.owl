@@ -13,8 +13,78 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#e_policy"/>
+        <Class IRI="#policy"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#kpi"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#baseline"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#subsystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#component"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#eco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#global"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#aligns_with"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#impacts_on"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#system"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#duty"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#component"/>
+        <Class IRI="#subsystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#duty"/>
+        <Class IRI="#kpi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#global"/>
+        <Class IRI="#kpi"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#subsystem"/>
+        <Class IRI="#system"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#system"/>
+        <Class IRI="#kpi"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#aligns_with"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#aligns_with"/>
+        <Class IRI="#eco"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#impacts_on"/>
+        <Class IRI="#eco"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#aligns_with"/>
+        <Class IRI="#policy"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#impacts_on"/>
+        <Class IRI="#kpi"/>
+    </ObjectPropertyRange>
 </Ontology>
 
 
